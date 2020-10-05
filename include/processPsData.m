@@ -11,7 +11,7 @@
 % 2. mask: the mask of the object
 % 3. lightMatrix: the lighting directions
 
-function  [tSampleR, tSampleG, tSampleB, mask, lightMatrix]= processPsData(scale, base_dir, object)
+function  [tSampleR, tSampleG, tSampleB, mask, lightMatrix, Normal_gt]= processPsData(scale, base_dir, object)
 
 fid = fopen([base_dir sprintf('%s/light_directions.txt', object)], 'rb');    
 temp =  textscan(fid,'%f %f %f');%[directory, '/',  imagename, '/lights.txt']; %lights
@@ -60,3 +60,5 @@ for i = 1:length(fl)
     tSampleG(i, :) = imgG(ind);
     tSampleB(i, :) = imgB(ind);
 end
+
+load([base_dir sprintf('%s/Normal_gt.mat', object)]);

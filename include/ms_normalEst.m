@@ -62,7 +62,7 @@ for i = 1:size(tSampleR, 2)
     
     % initialize the searching set of ids
     pId = 1:size(Bn{startScale, 1}, 3);
-    tic
+    %tic
     for ss = startScale:scale
         ee= [];
         for j = 1:length(pId)            
@@ -86,7 +86,7 @@ for i = 1:size(tSampleR, 2)
             pId = unique([mapSet{ss}{pId(id(1))} mapSet{ss}{pId(id(2))} mapSet{ss}{pId(id(3))}]);
         end        
     end
-    toc
+    %toc
  end  
     
 
